@@ -39,15 +39,15 @@ while on:
                 continue # go back to prompt
 
             value = input("Enter amount: ") # third statement
-            value_check = float(value) # checking if input from user is numerical only
+            value_check = float(value) # checking if input is numbers only
             if value_check > 0: #checking if value is greater than 0
                 expenses[user_prompt] = value_check # adding value to dictionary
-                categories.add(user_prompt)  # ✅ only add to categories when valid
+                categories.add(user_prompt)  # only add to categories when valid
             elif value_check < 0: # checking if value is less than 0
                 print("Error. Expense amounts must be non-negative.")
                 continue
             else:
-                # allow 0, but still add
+                # allow 0, but add
                 expenses[user_prompt] = value_check
                 categories.add(user_prompt)
         except ValueError:
