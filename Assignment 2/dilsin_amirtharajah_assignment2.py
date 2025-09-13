@@ -1,11 +1,11 @@
-import re   # regular expressions
+import re  # regular expressions
 
 
-def number_check(s):                        # s is text
-    pattern = r'^[0-9]+(\.[0-9]+)?$'        # ^ start, digits, optional .digits, $ end
+def number_check(s): # s is text
+    pattern = r'^[0-9]+(\.[0-9]+)?$' # ^ start, digits, optional .digits, $ end
     return re.match(pattern, s) is not None # returns match object/none
 
-while True:                                      # loop
+while True: # loop
     first_input = input("Enter first number: ")  
     if number_check(first_input):                
         break                                    
@@ -19,7 +19,7 @@ while True:
     else:
         print("Error: Input must be a valid number.")
 
-num1 = float(first_input)   # convert text to decimal
+num1 = float(first_input) # convert text to decimal
 num2 = float(second_input)
 
 
@@ -43,16 +43,16 @@ while True:
           "7) Quit")
     choice_str = input("Choice: ")           
 
-    if not re.match(r"^[1-7]$", choice_str):  # ^ start, [1-7], $ end
+    if not re.match(r"^[1-7]$", choice_str): # ^ start, [1-7], $ end
         print("Error: Choice must be an integer from 1 to 7.")
         continue                              
 
-    choice = int(choice_str)   # text to number
+    choice = int(choice_str) # text to number
 
     if choice == 1:                      
         result = num1 + num2
-        print("Result:", f"{result:.2f}")   # :.2f for format with 2 decimals
-        add_count += 1     # increment 1
+        print("Result:", f"{result:.2f}") # :.2f for format with 2 decimals
+        add_count += 1 # increment 1
         total_operations += 1
         if result > largest:
             largest = result
